@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('home');
-// });
-
 Route::get('/', [MainController::class, 'index'])->name('index');
 
 Route::get('/champion/{id}', [MainController::class, 'show'])->name('champion.show');

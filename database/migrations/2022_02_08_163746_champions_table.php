@@ -19,7 +19,6 @@ class ChampionsTable extends Migration
             $table->string('title');
             $table->longText('blurb');
             $table->string('image_full');
-            // $table->string('image_sprite');
             $table->timestamps();
         });
     }

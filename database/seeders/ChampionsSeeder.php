@@ -20,27 +20,19 @@ class ChampionsSeeder extends Seeder
 
         $current_date_time = Carbon::now()->toDateTimeString();
 
-        // for ($i=11; $i <= 191 ; $i++) { 
-        
-        //     sleep(3);
-            $response = Http::get('http://ddragon.leagueoflegends.com/cdn/12.2.1/data/es_ES/champion.json');
+        $response = Http::get('http://ddragon.leagueoflegends.com/cdn/12.2.1/data/es_ES/champion.json');
 
-            $data = $response->json();
+        $data = $response->json();
 
-
-            
-            foreach ($data['data'] as $obj){
-                    Champion::create(array(
-                        'name' => $obj['name'],
-                        'title' => $obj['title'],
-                        'blurb' => $obj['blurb'],
-                        'image_full' => $obj['image']['full'],
-                        // 'image_sprite' => $obj['image']['full'] . "",
-                        "created_at"=>$current_date_time, 
-                        "updated_at"=>$current_date_time
-                    ));
-            
-            }
-    // }
+        foreach ($data['data'] as $obj) {
+            Champion::create(array(
+                'name' => $obj['name'],
+                'title' => $obj['title'],
+                'blurb' => $obj['blurb'],
+                'image_full' => $obj['image']['full'],
+                "created_at" => $current_date_time,
+                "updated_at" => $current_date_time
+            ));
+        }
     }
 }

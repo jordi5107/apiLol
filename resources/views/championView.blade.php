@@ -8,9 +8,7 @@
                     <div class="col-md-6">
                         <div class="small mb-1">Campio</div>
                         <h1 class="display-5 fw-bolder">{{$champion->name}}</h1>
-                       
                         <p class="lead">{{$champion->blurb}}</p>
-                        
                     </div>
                 </div>
             </div>
